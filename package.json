@@ -1,0 +1,14 @@
+{
+  "name": "goose-gossip-api",
+  "version": "1.0.0",
+  "description": "API for goose-gossip",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harsh Sheth and Anjali Notaney",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
