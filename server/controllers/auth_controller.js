@@ -1,8 +1,8 @@
 
-modules.exports.login = (req, res, next) => {
+module.exports.login = (req, res, next) => {
 
 }
 
-modules.exports.register = (req, res, next) => {
-    res.send()
+module.exports.register = (req, res, next) => {
+    res.send("hi")
 }

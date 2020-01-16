@@ -1,10 +1,10 @@
 //Get the router from express
 const router = require('express').Router()
 
-import {
+const {
     login,
     register
-} from '../controllers/auth_controller';
+} = require('../controllers/auth_controller');
 
 router.route('/login').post(login);
 
