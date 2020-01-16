@@ -1,8 +1,11 @@
+const UserModel = require('../models/Users');
 
 module.exports.login = (req, res, next) => {
 
 }
 
 module.exports.register = (req, res, next) => {
-    res.send("hi")
+    UserModel.addUser({ email: 'test', first_name: "Harsh", last_name: "Sheth" }).then(() => {
+        res.send("Hello");
+    })
 }
