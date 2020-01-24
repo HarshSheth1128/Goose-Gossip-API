@@ -2,11 +2,11 @@
 const router = require('express').Router()
 
 const {
-    login,
+    authenticate,
     register
 } = require('../controllers/auth_controller');
 
-router.route('/login').post(login);
+router.route('/authenticate').post(authenticate);
 
 router.route('/register').post(register);
 
