@@ -13,7 +13,8 @@ module.exports.authenticate = (req, res, next) => {
             } else {
                 user = user[0];
                 if (Buffer.from(password).toString('base64') === user.password) {
-                    res.status(200).send({ username: user.username, id: user.uuid });
+                    const token = jwt.sign({ username: user.username, id: user.uuid }, secret);
+                    res.status(200).cookie('Bearer', token, { expires: new Date(Date.now() + 900000), domain: 'localhost', httpOnly: true }).send({ username: user.username, id: user.uuid });
                 } else {
                     res.status(400).send({ message: "Invalid username/password" });
                 }
@@ -26,7 +27,7 @@ module.exports.authenticate = (req, res, next) => {
 
         UserModel.addUser({ uuid, username }).then(() => {
             const token = jwt.sign({ username }, secret);
-            res.status(200).set("Bearer", token).send({ username });
+            res.status(200).cookie("Bearer", token, { domain: 'localhost' }).send({ username, uui });
         }).catch(() => {
             res.status(400).send({ message: "failed to create guest user" });
         });
