@@ -23,7 +23,7 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use('/', [require('./routes/auth'), require('./routes/Chats'), require('./routes/Messages')])
+app.use('/', [require('./routes/auth'), require('./routes/Chats'), require('./routes/Categories'),require('./routes/Messages')])
 
 
 // app.use(require('./middleware/error_middleware').all)
