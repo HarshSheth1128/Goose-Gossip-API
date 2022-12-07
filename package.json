@@ -9,7 +9,7 @@
   "author": "Harsh Sheth and Anjali Notaney",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "knex": "^0.20.8",
     "mysql": "^2.17.1"
   }
